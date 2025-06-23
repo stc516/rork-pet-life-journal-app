@@ -8,7 +8,6 @@
     "start-web-dev": "DEBUG=expo* bunx rork start -p p6rgvm0k0gsfkfodtfzqj --web --tunnel"
   },
   "dependencies": {
-    "dependencies": {
   "react": "18.3.1",
   "react-dom": "18.3.1",
   "lucide-react-native": "^0.475.0",

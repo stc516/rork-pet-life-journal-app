@@ -14,7 +14,7 @@ import { colors } from '@/constants/colors';
 import { fonts } from '@/constants/fonts';
 import { usePetStore } from '@/hooks/usePetStore';
 import { ActivityType, MoodType, WeatherType } from '@/types/pet';
-import { Calendar, Camera, MapPin, X } from 'lucide-react-native';
+import { FontAwesome, MaterialIcons, Feather, Entypo } from '@expo/vector-icons';
 import * as ImagePicker from 'expo-image-picker';
 
 //import { db } from '@/app/app/firebaseConfig';
@@ -86,23 +86,6 @@ export default function NewJournalEntryScreen() {
     alert('Failed to save entry. Please try again.');
   }
 };
-
-    }
-    
-    addJournalEntry({
-      petId: selectedPetId,
-      date,
-      content,
-      mood,
-      activities,
-      weather,
-      location: location.trim() || undefined,
-      photos: photos.length > 0 ? photos : undefined,
-      healthStatus: healthStatus.trim() || undefined,
-    });
-    
-    router.back();
-  };
   
   const formattedDate = date.toLocaleDateString('en-US', {
     weekday: 'short',

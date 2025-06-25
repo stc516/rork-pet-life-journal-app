@@ -17,6 +17,10 @@ import { ActivityType, MoodType, WeatherType } from '@/types/pet';
 import { Calendar, Camera, MapPin, X } from 'lucide-react-native';
 import * as ImagePicker from 'expo-image-picker';
 
+//import { db } from '@/app/app/firebaseConfig';
+import { collection, addDoc, Timestamp } from 'firebase/firestore';
+
+
 export default function NewJournalEntryScreen() {
   const { selectedPetId, addJournalEntry } = usePetStore();
   
@@ -54,10 +58,35 @@ export default function NewJournalEntryScreen() {
     }
   };
   
-  const handleSave = () => {
-    if (!content.trim()) {
-      alert('Please enter some content for your journal entry.');
-      return;
+  const handleSave = async () => {
+  if (!content.trim()) {
+    alert('Please enter some content for your journal entry.');
+    return;
+  }
+
+  const entry = {
+    petId: selectedPetId,
+    date: Timestamp.fromDate(date),
+    content,
+    mood,
+    activities,
+    weather,
+    location: location.trim() || undefined,
+    photos: photos.length > 0 ? photos : undefined,
+    healthStatus: healthStatus.trim() || undefined,
+    createdAt: Timestamp.now(),
+  };
+
+  try {
+    await addDoc(collection(db, 'journalEntries'), entry);
+    addJournalEntry(entry); // keep local store in sync
+    router.back();
+  } catch (error) {
+    console.error('Error saving journal entry:', error);
+    alert('Failed to save entry. Please try again.');
+  }
+};
+
     }
     
     addJournalEntry({

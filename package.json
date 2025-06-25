@@ -9,6 +9,7 @@
     "web": "expo start --web"
   },
   "dependencies": {
+<<<<<<< HEAD
     "react": "19.0.0",
     "react-dom": "19.0.0",
     "react-native": "0.79.4",
@@ -21,8 +22,22 @@
     "lucide-react-native": "0.475.0",
     "react-native-safe-area-context": "5.4.0",
     "react-native-screens": "4.11.1",
+=======
+>>>>>>> 6d4624b (Locking in local package.json changes before pulling)
     "@react-native-async-storage/async-storage": "1.21.0",
-    "firebase": "10.12.2"
+    "expo": "53.0.4",
+    "expo-image": "2.3.0",
+    "expo-linking": "7.1.5",
+    "expo-router": "5.1.0",
+    "expo-splash-screen": "~0.30.9",
+    "expo-web-browser": "14.2.0",
+    "firebase": "^10.14.1",
+    "lucide-react-native": "0.475.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-native": "0.79.4",
+    "react-native-safe-area-context": "5.4.0",
+    "react-native-screens": "4.11.1"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",

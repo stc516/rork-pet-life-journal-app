@@ -14,35 +14,32 @@ import { router } from 'expo-router';
 import { colors } from '@/constants/colors';
 import { fonts } from '@/constants/fonts';
 import { usePetStore } from '@/hooks/usePetStore';
-import { Calendar, Camera } from 'lucide-react-native';
+import { FontAwesome } from "@expo/vector-icons";
 import * as ImagePicker from 'expo-image-picker';
+import { pickAndUploadImage } from "@/utils/uploadImage";
+
 
 export default function NewPetScreen() {
   const { addPet } = usePetStore();
   
   const [name, setName] = useState('');
+  const [profileImage, setProfileImage] = useState<string | undefined>(undefined);
+  const [notes, setNotes] = useState('');
   const [species, setSpecies] = useState('');
   const [breed, setBreed] = useState('');
   const [birthdate, setBirthdate] = useState<Date | undefined>(undefined);
   const [adoptionDate, setAdoptionDate] = useState<Date | undefined>(undefined);
   const [color, setColor] = useState('');
   const [weight, setWeight] = useState('');
-  const [profileImage, setProfileImage] = useState<string | undefined>(undefined);
-  const [notes, setNotes] = useState('');
-  
   const handleAddPhoto = async () => {
-    const result = await ImagePicker.launchImageLibraryAsync({
-      mediaTypes: ImagePicker.MediaTypeOptions.Images,
-      allowsEditing: true,
-      aspect: [1, 1],
-      quality: 1,
-    });
-    
-    if (!result.canceled && result.assets && result.assets.length > 0) {
-      setProfileImage(result.assets[0].uri);
-    }
-  };
-  
+  try {
+    const url = await pickAndUploadImage("petProfiles");
+    if (url) setProfileImage(url);
+  } catch (err) {
+    console.error("Error uploading image:", err);
+  }
+};
+
   const handleSave = () => {
     if (!name.trim()) {
       alert('Please enter a name for your pet.');
@@ -94,7 +91,7 @@ export default function NewPetScreen() {
             style={styles.addPhotoButton}
             onPress={handleAddPhoto}
           >
-            <Camera size={20} color={colors.whiteFur} />
+            <FontAwesome name="camera" size={20} color={colors.whiteFur} />
           </TouchableOpacity>
         </View>
         
@@ -165,7 +162,7 @@ export default function NewPetScreen() {
                 setBirthdate(birthdate ? undefined : new Date(2020, 0, 1));
               }}
             >
-              <Calendar size={18} color={colors.darkGray} />
+              <FontAwesome name="calendar" size={18} color={colors.darkGray} />
               <Text style={styles.dateText}>
                 {birthdate 
                   ? birthdate.toLocaleDateString('en-US', {

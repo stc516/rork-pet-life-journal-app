@@ -17,6 +17,7 @@ import { usePetStore } from '@/hooks/usePetStore';
 import { FontAwesome } from "@expo/vector-icons";
 import * as ImagePicker from 'expo-image-picker';
 import { pickAndUploadImage } from "@/utils/uploadImage";
+import PetPlaceholder from '@/assets/images/pet-placeholder.png';
 
 
 export default function NewPetScreen() {
@@ -72,21 +73,21 @@ export default function NewPetScreen() {
       behavior={Platform.OS === 'ios' ? 'padding' : undefined}
       keyboardVerticalOffset={Platform.OS === 'ios' ? 64 : 0}
     >
-      <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
-        <View style={styles.profileImageContainer}>
-          {profileImage ? (
-            <Image
-              source={{ uri: profileImage }}
-              style={styles.profileImage}
-            />
-          ) : (
-            <View style={styles.profileImagePlaceholder}>
-              <Text style={styles.profileImagePlaceholderText}>
-                {name ? name.charAt(0).toUpperCase() : '?'}
-              </Text>
-            </View>
-          )}
-          
+<ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
+  <View style={styles.profileImageContainer}>
+    {profileImage ? (
+      <Image
+        source={{ uri: profileImage }}
+        style={styles.profileImage}
+      />
+    ) : (
+      <View style={styles.profileImagePlaceholder}>
+        <Image
+          source={require('@/assets/images/pet-placeholder.png')}
+          style={styles.profileImage}
+        />
+      </View>
+    )}
           <TouchableOpacity 
             style={styles.addPhotoButton}
             onPress={handleAddPhoto}

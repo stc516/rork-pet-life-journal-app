@@ -17,7 +17,7 @@ import { usePetStore } from '@/hooks/usePetStore';
 import { WeatherType, Coordinate } from '@/types/pet';
 import { Calendar, Camera, Clock, MapPin, Play, Stop } from 'lucide-react-native';
 import * as ImagePicker from 'expo-image-picker';
-import { ActivityMap } from '@/components/ActivityMap';
+import { ActivityMap } from '@/app/components/ActivityMap';
 
 export default function NewActivityScreen() {
   const { selectedPetId, addActivity } = usePetStore();

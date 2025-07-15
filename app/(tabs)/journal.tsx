@@ -4,10 +4,10 @@ import { router } from 'expo-router';
 import { colors } from '@/constants/colors';
 import { fonts } from '@/constants/fonts';
 import { usePetStore } from '@/hooks/usePetStore';
-import { JournalEntryCard } from '@/components/JournalEntryCard';
-import { PetProfileSelector } from '@/components/PetProfileSelector';
-import { EmptyState } from '@/components/EmptyState';
-import { FloatingActionButton } from '@/components/FloatingActionButton';
+import { JournalEntryCard } from '@/app/components/JournalEntryCard';
+import { PetProfileSelector } from '@/app/components/PetProfileSelector';
+import { EmptyState } from '@/app/components/EmptyState';
+import { FloatingActionButton } from '@/app/components/FloatingActionButton';
 import { Book, Filter } from 'lucide-react-native';
 
 export default function JournalScreen() {

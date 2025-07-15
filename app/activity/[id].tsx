@@ -12,7 +12,7 @@ import { useLocalSearchParams, router } from 'expo-router';
 import { colors } from '@/constants/colors';
 import { fonts } from '@/constants/fonts';
 import { usePetStore } from '@/hooks/usePetStore';
-import { ActivityMap } from '@/components/ActivityMap';
+import { ActivityMap } from '@/app/components/ActivityMap';
 import { Calendar, Clock, Edit, MapPin, Ruler, Trash2 } from 'lucide-react-native';
 
 export default function ActivityDetailScreen() {

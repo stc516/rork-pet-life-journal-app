@@ -4,10 +4,10 @@ import { Link, router } from 'expo-router';
 import { colors } from '@/constants/colors';
 import { fonts } from '@/constants/fonts';
 import { usePetStore } from '@/hooks/usePetStore';
-import { PetProfileSelector } from '@/components/PetProfileSelector';
-import { JournalEntryCard } from '@/components/JournalEntryCard';
-import { ReminderCard } from '@/components/ReminderCard';
-import { ActivityCard } from '@/components/ActivityCard';
+import { PetProfileSelector } from '@/app/components/PetProfileSelector';
+import { JournalEntryCard } from '@/app/components/JournalEntryCard';
+import { ReminderCard } from '@/app/components/ReminderCard';
+import { ActivityCard } from '@/app/components/ActivityCard';
 import { Calendar, Clock, Edit, Map, Plus } from 'lucide-react-native';
 
 export default function HomeScreen() {

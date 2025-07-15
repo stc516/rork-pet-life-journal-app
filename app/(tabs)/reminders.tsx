@@ -4,10 +4,10 @@ import { router } from 'expo-router';
 import { colors } from '@/constants/colors';
 import { fonts } from '@/constants/fonts';
 import { usePetStore } from '@/hooks/usePetStore';
-import { ReminderCard } from '@/components/ReminderCard';
-import { PetProfileSelector } from '@/components/PetProfileSelector';
-import { EmptyState } from '@/components/EmptyState';
-import { FloatingActionButton } from '@/components/FloatingActionButton';
+import { ReminderCard } from '@/app/components/ReminderCard';
+import { PetProfileSelector } from '@/app/components/PetProfileSelector';
+import { EmptyState } from '@/app/components/EmptyState';
+import { FloatingActionButton } from '@/app/components/FloatingActionButton';
 import { Calendar } from 'lucide-react-native';
 
 export default function RemindersScreen() {

@@ -3,10 +3,10 @@ import { View, StyleSheet, FlatList } from 'react-native';
 import { router } from 'expo-router';
 import { colors } from '@/constants/colors';
 import { usePetStore } from '@/hooks/usePetStore';
-import { ActivityCard } from '@/components/ActivityCard';
-import { PetProfileSelector } from '@/components/PetProfileSelector';
-import { EmptyState } from '@/components/EmptyState';
-import { FloatingActionButton } from '@/components/FloatingActionButton';
+import { ActivityCard } from '@/app/components/ActivityCard';
+import { PetProfileSelector } from '@/app/components/PetProfileSelector';
+import { EmptyState } from '@/app/components/EmptyState';
+import { FloatingActionButton } from '@/app/components/FloatingActionButton';
 import { Map } from 'lucide-react-native';
 
 export default function ActivitiesScreen() {

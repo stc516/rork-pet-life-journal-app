@@ -1,5 +1,5 @@
 import { getFirestore, collection, addDoc, getDocs, doc, deleteDoc } from 'firebase/firestore';
-import { app } from '../../firebaseConfig';
+import { app } from '@/lib/firebaseConfig';
 
 const db = getFirestore(app);
 
@@ -7,12 +7,12 @@ export const addJournalEntry = async (entry) => {
   try {
     const docRef = await addDoc(collection(db, 'journalEntries'), entry);
     return docRef.id;
-  } catch (error) {
+  } catch (error) {  
     console.error('Error adding journal entry:', error);
     throw error;
   }
-};
-
+}; 
+  
 export const getJournalEntries = async () => {
   try {
     const querySnapshot = await getDocs(collection(db, 'journalEntries'));
@@ -21,8 +21,8 @@ export const getJournalEntries = async () => {
     console.error('Error fetching journal entries:', error);
     throw error;
   }
-};
-
+}; 
+  
 export const deleteJournalEntry = async (id) => {
   try {
     await deleteDoc(doc(db, 'journalEntries', id));
@@ -31,3 +31,4 @@ export const deleteJournalEntry = async (id) => {
     throw error;
   }
 };
+

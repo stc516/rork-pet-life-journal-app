@@ -10,14 +10,14 @@ import {
   KeyboardAvoidingView
 } from 'react-native';
 import { router } from 'expo-router';
-import { colors } from '@/constants/colors';
-import { fonts } from '@/constants/fonts';
-import { usePetStore } from '@/hooks/usePetStore';
-import { ActivityType, MoodType, WeatherType } from '@/types/pet';
+import { colors } from '../constants/colors';
+import { fonts } from '../constants/fonts';
+import { usePetStore } from '../hooks/usePetStore';
+import { ActivityType, MoodType, WeatherType } from '../types/pet';
 import { FontAwesome, MaterialIcons, Feather, Entypo } from '@expo/vector-icons';
 import * as ImagePicker from 'expo-image-picker';
 
-//import { db } from '@/app/app/firebaseConfig';
+//import { db } from '@/lib/firebaseConfig';
 import { collection, addDoc, Timestamp } from 'firebase/firestore';
 
 

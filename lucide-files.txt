@@ -1,0 +1,9 @@
+./app/activity/new.tsx
+./app/activity/[id].tsx
+./app/(tabs)/settings.tsx
+./app/(tabs)/index.tsx
+./app/(tabs)/medical.tsx
+./app/(tabs)/activities.tsx
+./app/(tabs)/reminders.tsx
+./app/(tabs)/journal.tsx
+./app/pet/[id].tsx

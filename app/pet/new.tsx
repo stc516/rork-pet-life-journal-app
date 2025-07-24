@@ -11,13 +11,13 @@ import {
   Image
 } from 'react-native';
 import { router } from 'expo-router';
-import { colors } from '@/constants/colors';
-import { fonts } from '@/constants/fonts';
-import { usePetStore } from '@/hooks/usePetStore';
+import { colors } from '../constants/colors';
+import { fonts } from '../constants/fonts';
+import { usePetStore } from '../hooks/usePetStore';
 import { FontAwesome } from "@expo/vector-icons";
 import * as ImagePicker from 'expo-image-picker';
-import { pickAndUploadImage } from "@/utils/uploadImage";
-import PetPlaceholder from '@/assets/images/pet-placeholder.png';
+import { pickAndUploadImage } from "../utils/uploadImage";
+import PetPlaceholder from '../assets/images/pet-placeholder.png';
 
 
 export default function NewPetScreen() {
@@ -83,7 +83,7 @@ export default function NewPetScreen() {
     ) : (
       <View style={styles.profileImagePlaceholder}>
         <Image
-          source={require('@/assets/images/pet-placeholder.png')}
+          source={require('../assets/images/pet-placeholder.png')}
           style={styles.profileImage}
         />
       </View>

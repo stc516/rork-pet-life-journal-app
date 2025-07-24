@@ -4,7 +4,7 @@ import { Stack } from "expo-router";
 import * as SplashScreen from "expo-splash-screen";
 import { useEffect } from "react";
 import { StatusBar } from "expo-status-bar";
-import { colors } from "@/constants/colors";
+import { colors } from "../constants/colors";
 
 export const unstable_settings = {
   initialRouteName: "(tabs)",

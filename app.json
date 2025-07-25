@@ -22,7 +22,7 @@
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "app.rork.pet-life-journal"
+      "package": "com.baileysbestday.appl"
     },
     "web": {
       "favicon": "./assets/images/favicon.png"

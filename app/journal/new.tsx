@@ -10,10 +10,9 @@ import {
   KeyboardAvoidingView
 } from 'react-native';
 import { router } from 'expo-router';
-import { colors } from '../constants/colors';
-import { fonts } from '../constants/fonts';
-import { usePetStore } from '../hooks/usePetStore';
-import { ActivityType, MoodType, WeatherType } from '../types/pet';
+import { colors } from '@/constants/colors';
+import { fonts } from '@/constants/fonts';
+import { ActivityType, MoodType, WeatherType } from '@/types/pet';
 import { FontAwesome, MaterialIcons, Feather, Entypo } from '@expo/vector-icons';
 import * as ImagePicker from 'expo-image-picker';
 
@@ -22,7 +21,6 @@ import { collection, addDoc, Timestamp } from 'firebase/firestore';
 
 
 export default function NewJournalEntryScreen() {
-  const { selectedPetId, addJournalEntry } = usePetStore();
   
   const [content, setContent] = useState('');
   const [date, setDate] = useState(new Date());
@@ -65,7 +63,7 @@ export default function NewJournalEntryScreen() {
   }
 
   const entry = {
-    petId: selectedPetId,
+    // petId: selectedPetId,
     date: Timestamp.fromDate(date),
     content,
     mood,

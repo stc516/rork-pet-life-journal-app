@@ -1,11 +1,9 @@
 import React from 'react';
 import { View, Text, Switch, StyleSheet } from 'react-native';
-import { usePetStore } from '../hooks/usePetStore';
-import { colors } from '../constants/colors';
-import { fonts } from '../constants/fonts';
+import { colors } from '@/constants/colors';
+import { fonts } from '@/constants/fonts';
 
 export default function SettingsScreen() {
-  const { pets, addPet } = usePetStore();
   const [notificationsEnabled, setNotificationsEnabled] = React.useState(true);
   const [darkModeEnabled, setDarkModeEnabled] = React.useState(false);
 

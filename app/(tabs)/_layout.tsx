@@ -1,7 +1,17 @@
 import React from "react";
 import { Tabs } from "expo-router";
-import { colors } from "../constants/colors";
+import { colors } from "@/constants/colors";
 import { FontAwesome } from "@expo/vector-icons";
+
+const tabConfig = [
+  { name: "index", title: "Home", icon: "home" },
+  { name: "journal", title: "PetJournal", icon: "book" },
+  { name: "activities", title: "Activities", icon: "map" },
+  { name: "medical", title: "Medical", icon: "heartbeat" },
+  { name: "reminders", title: "Reminders", icon: "calendar" },
+  { name: "settings", title: "Settings", icon: "cog" },
+  { name: "pets", title: "Pets", icon: "paw" },
+];
 
 export default function TabLayout() {
   return (
@@ -23,48 +33,19 @@ export default function TabLayout() {
         },
       }}
     >
-      <Tabs.Screen
-        name="index"
-        options={{
-          title: "Home",
-          tabBarIcon: ({ color }) => <FontAwesome name="home" size={22} color={color} />,
-        }}
-      />
-      <Tabs.Screen
-        name="journal"
-        options={{
-          title: "Journal",
-          tabBarIcon: ({ color }) => <FontAwesome name="book" size={22} color={color} />,
-        }}
-      />
-      <Tabs.Screen
-        name="activities"
-        options={{
-          title: "Activities",
-          tabBarIcon: ({ color }) => <FontAwesome name="map" size={22} color={color} />,
-        }}
-      />
-      <Tabs.Screen
-        name="medical"
-        options={{
-          title: "Medical",
-          tabBarIcon: ({ color }) => <FontAwesome name="heartbeat" size={22} color={color} />,
-        }}
-      />
-      <Tabs.Screen
-        name="reminders"
-        options={{
-          title: "Reminders",
-          tabBarIcon: ({ color }) => <FontAwesome name="calendar" size={22} color={color} />,
-        }}
-      />
-      <Tabs.Screen
-        name="settings"
-        options={{
-          title: "Settings",
-          tabBarIcon: ({ color }) => <FontAwesome name="cog" size={22} color={color} />,
-        }}
-      />
+      {tabConfig.map(({ name, title, icon }) => (
+        <Tabs.Screen
+          key={name}
+          name={name}
+          options={{
+            title,
+            tabBarIcon: ({ color }) => (
+              <FontAwesome name={icon} size={22} color={color} />
+            ),
+          }}
+        />
+      ))}
     </Tabs>
   );
 }
+

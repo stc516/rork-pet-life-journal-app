@@ -1,6 +1,6 @@
 import { app } from '@/lib/firebaseConfig';import React from 'react';
 import { View } from 'react-native';
-import Icon from '../components/Icon';
+import Icon from '@/components/Icon';
 
 export default function ActivityDetail() {
   return (

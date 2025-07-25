@@ -11,17 +11,15 @@ import {
   Image
 } from 'react-native';
 import { router } from 'expo-router';
-import { colors } from '../constants/colors';
-import { fonts } from '../constants/fonts';
-import { usePetStore } from '../hooks/usePetStore';
+import { colors } from '@/constants/colors';
+import { fonts } from '@/constants/fonts';
 import { FontAwesome } from "@expo/vector-icons";
 import * as ImagePicker from 'expo-image-picker';
-import { pickAndUploadImage } from "../utils/uploadImage";
-import PetPlaceholder from '../assets/images/pet-placeholder.png';
+import { pickAndUploadImage } from "@/utils/uploadImage";
+import PetPlaceholder from '@/assets/images/pet-placeholder.png';
 
 
 export default function NewPetScreen() {
-  const { addPet } = usePetStore();
   
   const [name, setName] = useState('');
   const [profileImage, setProfileImage] = useState<string | undefined>(undefined);
@@ -52,17 +50,17 @@ export default function NewPetScreen() {
       return;
     }
     
-    addPet({
-      name: name.trim(),
-      species: species.trim(),
-      breed: breed.trim() || undefined,
-      birthdate,
-      adoptionDate,
-      color: color.trim() || undefined,
-      weight: weight ? parseFloat(weight) : undefined,
-      profileImage,
-      notes: notes.trim() || undefined,
-    });
+//    addPet({
+//      name: name.trim(),
+//      species: species.trim(),
+//      breed: breed.trim() || undefined,
+//      birthdate,
+//      adoptionDate,
+//      color: color.trim() || undefined,
+//      weight: weight ? parseFloat(weight) : undefined,
+//      profileImage,
+//      notes: notes.trim() || undefined,
+//    });
     
     router.back();
   };

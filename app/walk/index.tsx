@@ -1,3 +1,4 @@
+import { app } from '../lib/firebaseConfig';
 import React, { useEffect, useState } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, TextInput } from 'react-native';
 import { useNavigation } from 'expo-router';

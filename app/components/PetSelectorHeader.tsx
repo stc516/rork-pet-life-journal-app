@@ -1,3 +1,4 @@
+import { app } from '../lib/firebaseConfig';
 import { View, Text, TouchableOpacity } from 'react-native';
 import { useState } from 'react';
 

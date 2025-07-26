@@ -1,46 +1,32 @@
 #!/bin/bash
 
-echo "🔧 Starting Firebase import fixes..."
+echo "🔧 Starting global Firebase import fix..."
 
-files=(
-  "app/activity/new.tsx"
-  "app/activity/[id].tsx"
-  "app/(tabs)/journal.tsx"
-  "app/(tabs)/medical.tsx"
-  "app/(tabs)/activities.tsx"
-  "app/(tabs)/reminders.tsx"
-  "app/(tabs)/settings.tsx"
-  "app/pet/[id].tsx"
-  "app/lib/firebaseUtils.js"
-)
+# Find all .tsx and .js files in the app directory
+find ./app \( -name "*.tsx" -o -name "*.js" \) | while read -r file; do
+  echo "🔁 Fixing: $file"
 
-for file in "${files[@]}"; do
-  if [[ -f "$file" ]]; then
-    echo "🔁 Fixing $file"
+  # Remove old firebaseConfig import line(s)
+  sed -i '' '/firebaseConfig/d' "$file"
 
-    # Remove any old firebaseConfig import
-    sed -i '' '/firebaseConfig/d' "$file"
-
-    # Determine correct import path
-    if [[ "$file" == app/lib/* ]]; then
-      path="./firebaseConfig"
-    elif [[ "$file" == app/\(tabs\)* ]]; then
-      path="../../lib/firebaseConfig"
-    elif [[ "$file" == app/activity/* || "$file" == app/pet/* ]]; then
-      path="../lib/firebaseConfig"
-    else
-      path="@/lib/firebaseConfig"
-    fi
-
-    # Use printf to safely escape slashes
-    importLine=$(printf "import { app } from '%s';\n" "$path")
-
-    # Insert at top of file
-    sed -i '' "1s~^~$importLine~" "$file"
+  # Figure out relative path to firebaseConfig
+  depth=$(echo "$file" | grep -o "/" | wc -l | tr -d ' ')
+  if (( depth == 2 )); then
+    path="@/lib/firebaseConfig"
+  elif (( depth == 3 )); then
+    path="../lib/firebaseConfig"
+  elif (( depth == 4 )); then
+    path="../../lib/firebaseConfig"
   else
-    echo "❌ Skipped missing file: $file"
+    path="@/lib/firebaseConfig"
   fi
+
+  # Construct import line
+  importLine="import { app } from '$path';"
+
+  # Insert it as the very first line
+  sed -i '' "1s~^~$importLine\n~" "$file"
 done
 
-echo "✅ Firebase imports updated in all existing files."
+echo "✅ All Firebase imports updated."
 

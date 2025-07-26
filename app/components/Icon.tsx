@@ -1,3 +1,4 @@
+import { app } from '../lib/firebaseConfig';
 import React from 'react';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 

@@ -1,3 +1,4 @@
+import { app } from '@/lib/firebaseConfig';
 import { Redirect } from "expo-router";
 
 export default function Index() {

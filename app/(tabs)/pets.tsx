@@ -1,8 +1,8 @@
+import { app } from '../lib/firebaseConfig';
 import React, { useEffect, useState } from 'react';
 import { View, Text, TextInput, Button, FlatList, StyleSheet, Image, Alert } from 'react-native';
 import RNPickerSelect from 'react-native-picker-select';
 import { collection, addDoc, getDocs } from 'firebase/firestore';
-import { db } from '@/lib/firebaseConfig';
 import dogBreeds from '@/constants/dogBreeds.json';
 
 export default function PetsScreen() {

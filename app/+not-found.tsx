@@ -1,3 +1,4 @@
+import { app } from '@/lib/firebaseConfig';
 import { Link, Stack } from "expo-router";
 import { StyleSheet, Text, View } from "react-native";
 

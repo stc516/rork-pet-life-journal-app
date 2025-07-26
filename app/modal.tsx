@@ -1,3 +1,4 @@
+import { app } from '@/lib/firebaseConfig';
 import { StatusBar } from "expo-status-bar";
 import { Platform, StyleSheet, Text, View } from "react-native";
 

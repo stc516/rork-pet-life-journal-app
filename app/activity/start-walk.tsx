@@ -1,3 +1,4 @@
+import { app } from '../lib/firebaseConfig';
 import React, { useState, useEffect } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, TextInput, Image, ScrollView } from 'react-native';
 import MapView, { Marker } from 'react-native-maps';

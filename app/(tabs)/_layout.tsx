@@ -1,3 +1,4 @@
+import { app } from '../lib/firebaseConfig';
 import React from "react";
 import { Tabs } from "expo-router";
 import { colors } from "@/constants/colors";

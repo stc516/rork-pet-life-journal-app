@@ -1,3 +1,4 @@
+import { app } from '../lib/firebaseConfig';
 import { View, TouchableOpacity, Text } from 'react-native';
 
 const actions = ['Start Walk', 'Journal Entry', 'View Calendar'];

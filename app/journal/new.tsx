@@ -1,3 +1,4 @@
+import { app } from '../lib/firebaseConfig';
 import React, { useState } from 'react';
 import { 
   View, 
@@ -10,13 +11,12 @@ import {
   KeyboardAvoidingView
 } from 'react-native';
 import { router } from 'expo-router';
-import { colors } from '@/constants/colors';
-import { fonts } from '@/constants/fonts';
+import { colors } from "@/constants/colors";
+import { fonts } from "@/constants/fonts";
 import { ActivityType, MoodType, WeatherType } from '@/types/pet';
 import { FontAwesome, MaterialIcons, Feather, Entypo } from '@expo/vector-icons';
 import * as ImagePicker from 'expo-image-picker';
 
-//import { db } from '@/lib/firebaseConfig';
 import { collection, addDoc, Timestamp } from 'firebase/firestore';
 
 

@@ -1,4 +1,5 @@
-import { app } from '@/lib/firebaseConfig';import React from 'react';
+import { app } from '../lib/firebaseConfig';
+import React from 'react';
 import { View, Text } from 'react-native';
 import Icon from '@/components/Icon';
 

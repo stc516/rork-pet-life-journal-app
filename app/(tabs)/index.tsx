@@ -1,12 +1,14 @@
+import { app } from '../lib/firebaseConfig';
 import React from 'react';
 import { View, Text, StyleSheet, Image, TextInput, TouchableOpacity } from 'react-native';
 import MapView from 'react-native-maps';
+import petPlaceholder from '@/assets/images/pet-placeholder.png';
 
 export default function StartWalkScreen() {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-        <Image source={require('@/assets/pets/bailey.png')} style={styles.avatar} />
+        <Image source={petPlaceholder} style={styles.avatar} />
         <Text style={styles.headerText}>Bailey's Walk</Text>
       </View>
 

@@ -1,3 +1,4 @@
+import { app } from '../lib/firebaseConfig';
 import { View, Text } from 'react-native';
 
 export default function ReminderBlock({ petId }: { petId: string }) {

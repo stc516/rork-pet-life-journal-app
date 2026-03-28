@@ -4,7 +4,7 @@
     "strict": true,
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./app/*"]  // ✅ changed from ./src/* to ./app/*
+      "@/*": ["./src/*"]  // ✅ changed from ./app/* to ./src/*
     }
   },
   "include": [
